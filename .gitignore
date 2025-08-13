@@ -27,7 +27,15 @@ yarn-error.log
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+
+# Visual Studio Code workspace settings
 .vscode/
+
+# Cursor IDE (based on VS Code)
+.cursor/
+
+# IntelliJ IDEA / WebStorm / PhpStorm / PyCharm / other JetBrains IDEs
+.idea/
 
 # Angular
 environments/
