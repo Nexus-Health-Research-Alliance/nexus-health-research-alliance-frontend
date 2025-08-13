@@ -1,0 +1,43 @@
+name: Quality Gate
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Lint check
+      - name: Run ESLint
+        run: npm run lint
+
+      # 5. Prettier formatting check
+      - name: Run Prettier Check
+        run: npm run format:check
+
+      # 6. Run unit tests with coverage
+      - name: Run Tests with Coverage
+        run: npm run test:coverage
+
+      # 7. Ensure Angular builds (extra safety)
+      - name: Build Angular app
+        run: npm run build
