@@ -11,19 +11,9 @@
     "test:coverage": "jest --coverage",
     "serve:ssr:nexus-health-research-alliance-frontend": "node dist/nexus-health-research-alliance-frontend/server/server.mjs",
     "lint": "ng lint",
-    "lint:fix": "eslint . --fix",
-    "format": "eslint \"src/**/*.{ts,js,html}\" --fix",
+    "lint:fix": "ng lint --fix",
+    "format": "prettier --write .",
     "format:check": "prettier --check ."
-  },
-  "prettier": {
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
-      }
-    ]
   },
   "private": true,
   "dependencies": {

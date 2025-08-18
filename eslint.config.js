@@ -1,18 +1,9 @@
-// @ts-check
 const eslint = require('@eslint/js')
 const tseslint = require('typescript-eslint')
 const angular = require('angular-eslint')
-const prettierPlugin = require('eslint-plugin-prettier')
-const fs = require('fs')
-
-// Load Prettier settings from .prettierrc
-const prettierConfig = JSON.parse(fs.readFileSync('.prettierrc', 'utf8'))
+const eslintConfigPrettier = require('eslint-config-prettier')
 
 module.exports = tseslint.config(
-  {
-    ignores: ['node_modules', 'dist', 'coverage'],
-  },
-  // TypeScript + Angular rules
   {
     files: ['**/*.ts'],
     extends: [
@@ -20,31 +11,26 @@ module.exports = tseslint.config(
       ...tseslint.configs.recommended,
       ...tseslint.configs.stylistic,
       ...angular.configs.tsRecommended,
+      eslintConfigPrettier,
     ],
     processor: angular.processInlineTemplates,
-    plugins: {
-      prettier: prettierPlugin,
-    },
     rules: {
       '@angular-eslint/directive-selector': [
         'error',
-        { type: 'attribute', prefix: 'app', style: 'camelCase' },
+        {
+          type: 'attribute',
+          prefix: 'app',
+          style: 'camelCase',
+        },
       ],
       '@angular-eslint/component-selector': [
         'error',
-        { type: 'element', prefix: 'app', style: 'kebab-case' },
+        {
+          type: 'element',
+          prefix: 'app',
+          style: 'kebab-case',
+        },
       ],
-      semi: ['error', 'never'],
-      'prettier/prettier': ['error', prettierConfig],
-    },
-  },
-  // Application-specific rules
-  {
-    files: ['src/app/**/*.{ts,js}'],
-    rules: {
-      semi: ['error', 'never'],
-      'prettier/prettier': ['error', prettierConfig],
-      'no-console': ['error', { allow: ['warn', 'error'] }],
       '@typescript-eslint/no-unused-vars': ['error'],
       '@angular-eslint/sort-lifecycle-methods': 'error',
       'no-duplicate-imports': 'error',
@@ -89,15 +75,20 @@ module.exports = tseslint.config(
           ],
         },
       ],
+      'prettier/prettier': 'off',
     },
   },
-  // HTML template rules
+  {
+    files: ['**/*.spec.ts'],
+    rules: {
+      '@angular-eslint/component-selector': 'off',
+      '@angular-eslint/directive-selector': 'off',
+      '@typescript-eslint/explicit-function-return-type': 'off',
+    },
+  },
   {
     files: ['**/*.html'],
-    extends: [
-      ...angular.configs.templateRecommended,
-      ...angular.configs.templateAccessibility,
-    ],
+    extends: [...angular.configs.templateRecommended],
     rules: {
       '@angular-eslint/template/eqeqeq': 'error',
       '@angular-eslint/template/no-any': 'error',

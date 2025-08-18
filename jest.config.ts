@@ -1,7 +1,7 @@
 globalThis.ngJest = {
   skipNgcc: true,
   tsconfig: 'tsconfig.spec.json',
-};
+}
 
 /** @type {import('@jest/types').Config.InitialOptions} */
 module.exports = {
@@ -40,4 +40,4 @@ module.exports = {
       statements: 85,
     },
   },
-};
+}
