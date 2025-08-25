@@ -1,20 +1,40 @@
 @if (isLinkVariant()) {
-@if (linkType() === 'routerLink') {
-<a data-test-id="nexus-button" [routerLink]="linkUrl()" [class]="computedClasses()" [attr.aria-label]="ariaLabel()"
-  (click)="onClick($event)" (keydown)="onKeyDown($event)">
-  <ng-container *ngTemplateOutlet="projectContent"></ng-container>
-</a>
+  @if (linkType() === 'routerLink') {
+    <a
+      data-test-id="nexus-button"
+      [routerLink]="linkUrl()"
+      [class]="computedClasses()"
+      [attr.aria-label]="ariaLabel()"
+      (click)="onClick($event)"
+      (keydown)="onKeyDown($event)"
+    >
+      <ng-container *ngTemplateOutlet="projectContent"></ng-container>
+    </a>
+  } @else {
+    <a
+      data-test-id="nexus-button"
+      [href]="linkUrl()"
+      [target]="linkTarget()"
+      [class]="computedClasses()"
+      [attr.aria-label]="ariaLabel()"
+      (click)="onClick($event)"
+      (keydown)="onKeyDown($event)"
+    >
+      <ng-container *ngTemplateOutlet="projectContent"></ng-container>
+    </a>
+  }
 } @else {
-<a data-test-id="nexus-button" [href]="linkUrl()" [target]="linkTarget()" [class]="computedClasses()"
-  [attr.aria-label]="ariaLabel()" (click)="onClick($event)" (keydown)="onKeyDown($event)">
-  <ng-container *ngTemplateOutlet="projectContent"></ng-container>
-</a>
-}
-} @else {
-<button data-test-id="nexus-button" [type]="type()" [class]="computedClasses()" [disabled]="isDisabled()"
-  (click)="onClick($event)" (keydown)="onKeyDown($event)" [attr.aria-label]="ariaLabel()">
-  <ng-container *ngTemplateOutlet="projectContent"></ng-container>
-</button>
+  <button
+    data-test-id="nexus-button"
+    [type]="type()"
+    [class]="computedClasses()"
+    [disabled]="isDisabled()"
+    (click)="onClick($event)"
+    (keydown)="onKeyDown($event)"
+    [attr.aria-label]="ariaLabel()"
+  >
+    <ng-container *ngTemplateOutlet="projectContent"></ng-container>
+  </button>
 }
 
 <ng-template #projectContent>
