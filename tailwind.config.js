@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,ts}'],
+  content: ['./src/**/*.{html,ts}', 'projects/ui-components/src/**/*.{html,ts}'],
   theme: {
     extend: {
       colors: {
@@ -55,6 +55,9 @@ module.exports = {
           800: '#B10303',
           900: '#920A0A',
           950: '#500000',
+        },
+        primaryBlue: {
+          50: '#5275FF',
         },
       },
       fontFamily: {
