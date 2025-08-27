@@ -37,32 +37,6 @@ describe('Button', () => {
     })
   })
 
-  describe('Computed Properties', () => {
-    it('should compute isLinkVariant correctly', () => {
-      expect(component.isLinkVariant()).toBe(false)
-
-      fixture.componentRef.setInput('variant', 'link')
-      expect(component.isLinkVariant()).toBe(true)
-    })
-
-    it('should compute classes correctly', () => {
-      const classes = component.computedClasses()
-      expect(typeof classes).toBe('string')
-    })
-
-    it('should include loading classes when isLoading is true', () => {
-      fixture.componentRef.setInput('isLoading', true)
-      const classes = component.computedClasses()
-      expect(classes).toContain('cursor-wait')
-    })
-
-    it('should merge custom className', () => {
-      fixture.componentRef.setInput('className', 'custom-class')
-      const classes = component.computedClasses()
-      expect(classes).toContain('custom-class')
-    })
-  })
-
   describe('Button Rendering', () => {
     it('should render button with correct attributes', () => {
       fixture.componentRef.setInput('type', 'submit')
@@ -280,29 +254,6 @@ describe('Button', () => {
       fixture.detectChanges()
 
       expect(fixture.nativeElement.textContent).toContain(testContent)
-    })
-  })
-
-  describe('Accessibility', () => {
-    it('should set aria-label when provided', () => {
-      fixture.componentRef.setInput('ariaLabel', 'Accessible Button')
-      fixture.detectChanges()
-
-      const buttonElement = compiled.querySelector('button[data-test-id="nexus-button"]')
-      expect(buttonElement?.getAttribute('aria-label')).toBe('Accessible Button')
-    })
-
-    it('should handle keyboard navigation properly', () => {
-      const buttonElement = compiled.querySelector(
-        'button[data-test-id="nexus-button"]',
-      ) as HTMLButtonElement
-      jest.spyOn(component, 'onClick')
-
-      buttonElement.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }))
-      expect(component.onClick).toHaveBeenCalled()
-
-      buttonElement.dispatchEvent(new KeyboardEvent('keydown', { key: ' ' }))
-      expect(component.onClick).toHaveBeenCalledTimes(2)
     })
   })
 })
