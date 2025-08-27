@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core'
 import { Button } from '../../../../../projects/ui-components/src/public-api'
 import { ClickOutside } from '../../../logics/directives/click-outside/click-outside'
+import { NgOptimizedImage } from '@angular/common'
 
 @Component({
   selector: 'app-header',
-  imports: [Button, ClickOutside],
+  imports: [Button, ClickOutside, NgOptimizedImage],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
