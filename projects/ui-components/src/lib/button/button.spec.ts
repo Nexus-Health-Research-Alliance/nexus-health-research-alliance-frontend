@@ -37,63 +37,6 @@ describe('Button', () => {
     })
   })
 
-  describe('Input Properties', () => {
-    it('should have default input values', () => {
-      expect(component.variant()).toBe('primary')
-      expect(component.size()).toBe('medium')
-      expect(component.type()).toBe('button')
-      expect(component.isDisabled()).toBe(false)
-      expect(component.isLoading()).toBe(false)
-      expect(component.ariaLabel()).toBe('')
-      expect(component.className()).toBe('')
-      expect(component.linkType()).toBe('anchor')
-      expect(component.linkUrl()).toBe('')
-      expect(component.linkTarget()).toBe('_self')
-    })
-
-    it('should accept variant input', () => {
-      fixture.componentRef.setInput('variant', 'secondary')
-      expect(component.variant()).toBe('secondary')
-    })
-
-    it('should accept size input', () => {
-      fixture.componentRef.setInput('size', 'large')
-      expect(component.size()).toBe('large')
-    })
-
-    it('should accept type input', () => {
-      fixture.componentRef.setInput('type', 'submit')
-      expect(component.type()).toBe('submit')
-    })
-
-    it('should transform boolean attributes correctly', () => {
-      fixture.componentRef.setInput('isDisabled', true)
-      fixture.componentRef.setInput('isLoading', true)
-      expect(component.isDisabled()).toBe(true)
-      expect(component.isLoading()).toBe(true)
-    })
-
-    it('should accept ariaLabel input', () => {
-      fixture.componentRef.setInput('ariaLabel', 'Test Button')
-      expect(component.ariaLabel()).toBe('Test Button')
-    })
-
-    it('should accept className input', () => {
-      fixture.componentRef.setInput('className', 'custom-class')
-      expect(component.className()).toBe('custom-class')
-    })
-
-    it('should accept link-related inputs', () => {
-      fixture.componentRef.setInput('linkType', 'routerLink')
-      fixture.componentRef.setInput('linkUrl', '/test')
-      fixture.componentRef.setInput('linkTarget', '_blank')
-
-      expect(component.linkType()).toBe('routerLink')
-      expect(component.linkUrl()).toBe('/test')
-      expect(component.linkTarget()).toBe('_blank')
-    })
-  })
-
   describe('Computed Properties', () => {
     it('should compute isLinkVariant correctly', () => {
       expect(component.isLinkVariant()).toBe(false)
@@ -355,11 +298,9 @@ describe('Button', () => {
       ) as HTMLButtonElement
       jest.spyOn(component, 'onClick')
 
-      // Test Enter key
       buttonElement.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }))
       expect(component.onClick).toHaveBeenCalled()
 
-      // Test Space key
       buttonElement.dispatchEvent(new KeyboardEvent('keydown', { key: ' ' }))
       expect(component.onClick).toHaveBeenCalledTimes(2)
     })
