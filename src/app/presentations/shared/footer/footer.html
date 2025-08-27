@@ -1,4 +1,4 @@
-<footer class="bg-brand-920 text-white px-8 xl:px-[120px] py-[93px]">
+<footer class="bg-brand-920 text-white px-8 xl:px-[120px] py-[93px]" role="contentinfo" aria-label="Footer">
   <div class="container mx-auto text-center">
     <div class="mb-[57px]">
       <h2 class="font-semibold md:font-bold text-xl md:text-2xl leading-[30px] md:leading-8 mb-3.5">
@@ -9,7 +9,9 @@
       </p>
     </div>
     <p class="text-xs md:text-sm leading-[18px] md:leading-[21px] font-normal">
-      &copy; {{ currentYear }} Nexus Health Research Alliance
+      <span aria-hidden="true">&copy;</span>
+      <span class="sr-only">Copyright</span>
+      {{ currentYear }} Nexus Health Research Alliance
     </p>
   </div>
 </footer>
