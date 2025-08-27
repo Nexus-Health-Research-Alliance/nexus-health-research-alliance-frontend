@@ -1,0 +1,43 @@
+.mobile-menu {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 300ms ease-out,
+    transform 300ms ease-out;
+
+  @starting-style {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.slide-down-enter {
+  animation: slide-down 300ms ease-out;
+}
+
+.slide-up-leave {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    opacity 300ms ease-in,
+    transform 300ms ease-in;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-icon-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.mobile-menu {
+  z-index: 50;
+}
