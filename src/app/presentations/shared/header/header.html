@@ -10,9 +10,15 @@
         linkUrl="/"
         size="none"
         className="before:h-0 before:w-0"
-        aria-label="Nexus Health Research Alliance Home"
+        ariaLabel="Nexus Health Research Alliance Home"
       >
-        <img src="images/logo.svg" alt="Nexus Health Research Alliance Logo" />
+        <img
+          ngSrc="images/logo.webp"
+          width="120"
+          height="38"
+          priority
+          alt="Nexus Health Research Alliance Logo"
+        />
       </lib-button>
     </div>
 
@@ -76,7 +82,7 @@
         variant="tertiary"
         size="none"
         className="md:hidden text-accent-900 focus:text-accent-900 focus:bg-transparent focus:ring-0 focus:outline-none hover:bg-transparent active:bg-transparent active:border-0 w-6 h-6"
-        [attr.aria-label]="isMenuOpen() ? 'Close menu' : 'Open menu'"
+        [ariaLabel]="isMenuOpen() ? 'Close menu' : 'Open menu'"
         (btnClick)="toggleMenu()"
       >
         <svg
