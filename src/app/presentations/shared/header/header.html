@@ -1,0 +1,94 @@
+<header class="bg-white shadow-md" appClickOutside (clickOutside)="onClickOutside()">
+  <nav class="flex justify-between items-center px-6 md:px-8 xl:px-[120px] py-4" aria-label="Main navigation">
+
+    <div class="flex items-center">
+      <lib-button variant="link" linkType="routerLink" linkUrl="/" size="none" className="before:h-0 before:w-0"
+        aria-label="Nexus Health Research Alliance Home">
+        <img src="images/logo.svg" alt="Nexus Health Research Alliance Logo" />
+      </lib-button>
+    </div>
+
+    <div class="flex items-center gap-12">
+      <ul class="hidden md:flex items-center gap-[37px] list-none m-0 p-0">
+        <li>
+          <lib-button variant="link" linkType="routerLink" linkUrl="/who-we-are" size="none" [isDisabled]="false"
+            ariaLabel="Who we are" className="text-accent-800 text-base font-normal">
+            <span>Who we are</span>
+          </lib-button>
+        </li>
+        <li>
+          <lib-button variant="link" linkType="routerLink" linkUrl="/what-we-do" size="none" [isDisabled]="false"
+            ariaLabel="What we do" className="text-accent-800 text-base font-normal">
+            <span>What we do</span>
+          </lib-button>
+        </li>
+        <li>
+          <lib-button variant="link" linkType="routerLink" linkUrl="/projects" size="none" [isDisabled]="false"
+            ariaLabel="Projects" className="text-accent-800 text-base font-normal">
+            <span>Projects</span>
+          </lib-button>
+        </li>
+      </ul>
+
+      <div class="hidden md:block">
+        <lib-button variant="link" size="medium" linkType="routerLink" linkUrl="/contact-us" ariaLabel="Contact Us"
+          className="bg-brand-700 hover:bg-brand-400 text-white hover:text-white rounded focus:border-[3px] focus:border-primaryBlue-50 active:bg-brand-800 active:border-0 disabled:bg-accent-300 disabled:text-white px-6 py-2 duration-300 before:h-0 before:w-0">
+          <span>Contact Us</span>
+        </lib-button>
+      </div>
+
+      <lib-button variant="tertiary" size="none"
+        className="md:hidden text-accent-900 focus:text-accent-900 focus:bg-transparent focus:ring-0 focus:outline-none hover:bg-transparent active:bg-transparent active:border-0 w-6 h-6"
+        [attr.aria-label]="isMenuOpen() ? 'Close menu' : 'Open menu'" (btnClick)="toggleMenu()">
+        <svg class="h-6 w-6 transform transition-transform duration-300 ease-in-out" [class.rotate-90]="isMenuOpen()"
+          [class.rotate-0]="!isMenuOpen()" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+          stroke-linecap="round" stroke-linejoin="round">
+          @if (!isMenuOpen()) {
+          <path d="M4 6h16M4 12h16M4 18h16" />
+          }
+          @if (isMenuOpen()) {
+          <path d="M18 6L6 18M6 6l12 12" />
+          }
+        </svg>
+      </lib-button>
+    </div>
+
+  </nav>
+
+  @if (isMenuOpen()) {
+  <div class="md:hidden bg-white border-t border-gray-200 shadow-lg mobile-menu" animate.enter="slide-down-enter"
+    animate.leave="slide-up-leave">
+    <nav class="px-6 py-4" aria-label="Mobile navigation">
+      <ul class="space-y-4 list-none m-0 p-0">
+        <li>
+          <lib-button variant="link" linkType="routerLink" linkUrl="/who-we-are" size="none" [isDisabled]="false"
+            ariaLabel="Who we are" className="text-accent-800 text-base font-normal block w-full text-left py-2"
+            (btnClick)="closeMenu()">
+            <span>Who we are</span>
+          </lib-button>
+        </li>
+        <li>
+          <lib-button variant="link" linkType="routerLink" linkUrl="/what-we-do" size="none" [isDisabled]="false"
+            ariaLabel="What we do" className="text-accent-800 text-base font-normal block w-full text-left py-2"
+            (btnClick)="closeMenu()">
+            <span>What we do</span>
+          </lib-button>
+        </li>
+        <li>
+          <lib-button variant="link" linkType="routerLink" linkUrl="/projects" size="none" [isDisabled]="false"
+            ariaLabel="Projects" className="text-accent-800 text-base font-normal block w-full text-left py-2"
+            (btnClick)="closeMenu()">
+            <span>Projects</span>
+          </lib-button>
+        </li>
+        <li class="pt-4 border-t border-gray-100">
+          <lib-button variant="primary" size="medium" [isDisabled]="false" type="button" ariaLabel="Contact Us"
+            className="px-6 py-2 duration-300 w-full" (btnClick)="closeMenu()">
+            <span>Contact Us</span>
+          </lib-button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  }
+</header>
