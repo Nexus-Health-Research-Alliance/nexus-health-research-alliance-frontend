@@ -1,17 +1,7 @@
-<section
-  class="relative h-[90vh] w-full overflow-hidden"
-  aria-labelledby="hero-title"
-  aria-describedby="hero-description"
->
-  <video
-    class="absolute inset-0 w-full h-full object-cover"
-    [src]="videoSrc()"
-    autoplay
-    muted
-    loop
-    playsinline
-    [attr.aria-label]="videoAriaLabel() || 'Background video'"
-  >
+<section class="relative h-[90vh] w-full overflow-hidden" aria-labelledby="hero-title"
+  aria-describedby="hero-description">
+  <video class="absolute inset-0 w-full h-full object-cover" [src]="videoSrc()" autoplay muted loop playsinline
+    [attr.aria-label]="videoAriaLabel() || 'Background video'">
     <p>
       Your browser does not support the video tag. Background video shows
       {{ videoAriaLabel() || 'promotional content' }}.
@@ -20,67 +10,44 @@
 
   <div class="absolute inset-0 bg-black bg-opacity-45" aria-hidden="true"></div>
 
-  <div
-    class="relative z-10 flex items-center justify-center flex-col h-full px-6 xl:px-[120px] text-center"
-  >
+  <div class="relative z-10 flex items-center justify-center flex-col h-full px-6 xl:px-[120px] text-center">
     <div class="mb-8">
-      <h1
-        id="hero-title"
-        class="text-2xl md:text-5xl xl:text-7xl text-brand-200 leading-9 md:leading-[72px] font-bold mb-4"
-      >
+      <h1 id="hero-title"
+        class="text-2xl md:text-5xl xl:text-7xl text-brand-200 leading-9 md:leading-[72px] font-bold mb-4">
         {{ title() }}
       </h1>
 
-      <p
-        role="doc-subtitle"
-        class="text-base md:text-2xl md:leading-9 font-normal md:font-bold opacity-90 text-white"
-      >
+      <p role="doc-subtitle" class="text-base md:text-2xl md:leading-9 font-normal md:font-bold opacity-90 text-white">
         {{ subtitle() }}
       </p>
     </div>
 
-    <p
-      id="hero-description"
-      class="font-normal text-xs md:text-sm xl:text-base text-white leading-[18px] md:leading-[21px] xl:leading-6 mb-8"
-    >
-      {{ description() }}
+    <div class="mb-8 max-w-[1123.3px] mx-auto">
+    <p id="hero-description"
+      class="font-normal text-xs md:text-sm xl:text-base text-white leading-[18px] md:leading-[21px] xl:leading-6">
+        {{ description() }}
     </p>
+    </div>
 
     @if (showCtaButtons()) {
-      <div
-        class="flex flex-col md:flex-row gap-4 justify-center items-center"
-        aria-label="Hero section actions"
-      >
-        <lib-button
-          variant="link"
-          linkType="routerLink"
-          linkUrl="/projects"
-          size="medium"
-          className="bg-brand-700 hover:bg-brand-400 text-accent-100 hover:text-accent-100 rounded focus:border-[3px] focus:border-primaryBlue-50 active:bg-brand-800 active:border-0 disabled:bg-accent-300 disabled:text-white px-6 py-2 duration-300 before:h-0 before:w-0"
-          ariaLabel="Explore Our Research - Navigate to projects page"
-        >
-          <span>Explore Our Research</span>
-        </lib-button>
+    <div class="flex flex-col md:flex-row gap-4 justify-center items-center" aria-label="Hero section actions">
+      <lib-button variant="link" linkType="routerLink" linkUrl="/projects" size="medium"
+        className="bg-brand-700 hover:bg-brand-400 text-accent-100 hover:text-accent-100 rounded focus:border-[3px] focus:border-primaryBlue-50 active:bg-brand-800 active:border-0 disabled:bg-accent-300 disabled:text-white px-6 py-2 duration-300 before:h-0 before:w-0"
+        ariaLabel="Explore Our Research - Navigate to projects page">
+        <span>Explore Our Research</span>
+      </lib-button>
 
-        <lib-button
-          variant="secondary"
-          linkType="routerLink"
-          linkUrl="/who-we-are"
-          size="medium"
-          className="bg-transparent hover:bg-brand-700 text-accent-100 hover:text-accent-100 rounded border-accent-100 focus:border-[1.5px] focus:border-primaryBlue-50 focus:ring-[1.5px] active:bg-brand-800 active:border-0 disabled:border-accent-100 disabled:text-accent-200 disabled:bg-accent-100 px-6 py-2 duration-300 before:h-0 before:w-0"
-          ariaLabel="Learn More - Navigate to who we are page"
-        >
-          <span>Learn More</span>
-        </lib-button>
-      </div>
+      <lib-button variant="secondary" linkType="routerLink" linkUrl="/who-we-are" size="medium"
+        className="bg-transparent hover:bg-brand-700 text-accent-100 hover:text-accent-100 rounded border-accent-100 focus:border-[1.5px] focus:border-primaryBlue-50 focus:ring-[1.5px] active:bg-brand-800 active:border-0 disabled:border-accent-100 disabled:text-accent-200 disabled:bg-accent-100 px-6 py-2 duration-300 before:h-0 before:w-0"
+        ariaLabel="Learn More - Navigate to who we are page">
+        <span>Learn More</span>
+      </lib-button>
+    </div>
     }
   </div>
 
-  <div
-    role="img"
-    aria-label="Scroll down to see more content"
-    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
-  >
+  <div role="img" aria-label="Scroll down to see more content"
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
     <img src="/icons/white-arrow-down.svg" alt="" aria-hidden="true" />
   </div>
 </section>
