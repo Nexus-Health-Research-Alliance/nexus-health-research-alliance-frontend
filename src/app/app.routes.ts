@@ -21,7 +21,10 @@ export const routes: Routes = [
   {
     path: 'projects',
     title: 'Projects - Nexus Health Research Alliance',
-    loadComponent: () => import('./presentations/pages/research-projects/research-projects').then((m) => m.ResearchProjects),
+    loadComponent: () =>
+      import('./presentations/pages/research-projects/research-projects').then(
+        (m) => m.ResearchProjects,
+      ),
   },
   {
     path: 'contact-us',

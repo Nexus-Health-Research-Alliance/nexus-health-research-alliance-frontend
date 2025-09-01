@@ -1,4 +1,4 @@
-import { HeroSection } from './../../../../../projects/ui-components/src/lib/presentations/hero-section/hero-section';
+import { HeroSection } from './../../../../../projects/ui-components/src/lib/presentations/hero-section/hero-section'
 import { Component } from '@angular/core'
 
 @Component({
