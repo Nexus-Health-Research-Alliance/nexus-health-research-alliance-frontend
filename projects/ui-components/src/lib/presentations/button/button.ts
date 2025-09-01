@@ -8,9 +8,9 @@ import {
   output,
 } from '@angular/core'
 import { RouterLink } from '@angular/router'
-import { ButtonHtmlType, LinkTarget, LinkType } from '../logics/models/types/button.types'
-import { mergeClasses } from '../../public-api'
-import { ButtonVariantProps, buttonVariant } from '../variants/button.variant'
+import { ButtonHtmlType, LinkTarget, LinkType } from '../../logics/models/types/button.types'
+import { mergeClasses } from '../../../public-api'
+import { ButtonVariantProps, buttonVariant } from '../../variants/button.variant'
 import { ClassValue } from 'clsx'
 
 @Component({
