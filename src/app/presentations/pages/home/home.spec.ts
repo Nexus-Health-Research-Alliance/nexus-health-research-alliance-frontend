@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
 import { Home } from './home'
+import { HeroSection } from '../../../../../projects/ui-components/src/lib/presentations/hero-section/hero-section'
+import { provideRouter } from '@angular/router'
 
 describe('Home', () => {
   let component: Home
@@ -8,7 +10,8 @@ describe('Home', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Home],
+      imports: [Home, HeroSection],
+      providers: [provideRouter([])],
     }).compileComponents()
 
     fixture = TestBed.createComponent(Home)
