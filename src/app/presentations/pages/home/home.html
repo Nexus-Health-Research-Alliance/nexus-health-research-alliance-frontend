@@ -1,37 +1,61 @@
 <section class="">
-  <lib-hero-section title="Nexus Health Research Alliance." subtitle="Advancing Clinical Research and Health Outcomes"
+  <lib-hero-section
+    title="Nexus Health Research Alliance."
+    subtitle="Advancing Clinical Research and Health Outcomes"
     description="Nexus Health Research Alliance is a collaborative initiative dedicated to strengthening clinical and public health research. By combining scientific rigor, multidisciplinary expertise, and strong institutional partnerships, we aim to produce reliable evidence that drives improvements in patient care, clinical practice, and health policy in low- and middleincome countries and the African region"
-    videoSrc="/videos/hero-video.mp4" videoAriaLabel="Promotional content" [showCtaButtons]="true" />
+    videoSrc="/videos/hero-video.mp4"
+    videoAriaLabel="Promotional content"
+    [showCtaButtons]="true"
+  />
 
   <div class="w-full my-4 md:my-6 xl:my-8" role="separator" aria-hidden="true">
     <img ngSrc="/images/divider.svg" alt="" width="100" height="100" class="w-full h-full" />
   </div>
 
-  <section class="py-[10px] px-6 md:px-8 xl:px-[120px] flex flex-col gap-8" aria-labelledby="our-purpose-heading">
+  <section
+    class="py-[10px] px-6 md:px-8 xl:px-[120px] flex flex-col gap-8"
+    aria-labelledby="our-purpose-heading"
+  >
     <header class="text-center flex flex-col gap-2 justify-center items-center">
-      <h2 id="our-purpose-heading" class="text-2xl text-accent-950 leading-9 font-bold">Our Purpose</h2>
-      <div class="w-[105px] border-b-[6px] border-secondary-700 rounded-xl" role="presentation" aria-hidden="true">
-      </div>
+      <h2 id="our-purpose-heading" class="text-2xl text-accent-950 leading-9 font-bold">
+        Our Purpose
+      </h2>
+      <div
+        class="w-[105px] border-b-[6px] border-secondary-700 rounded-xl"
+        role="presentation"
+        aria-hidden="true"
+      ></div>
     </header>
 
-    <div class="flex flex-col md:flex-row items-center justify-center gap-6" role="list"
-      aria-label="Our purpose initiatives">
+    <div
+      class="flex flex-col md:flex-row items-center justify-center gap-6"
+      role="list"
+      aria-label="Our purpose initiatives"
+    >
       @for (purpose of ourPurpose; track $index) {
-      <div class="rounded-xl p-[2px] bg-gradient-to-b {{ purpose.borderGradient }}" role="listitem">
-        <article
-          class="bg-white rounded-xl max-w-[588px] md:w-[373px] xl:w-[588px] md:h-[326px] xl:h-[265px] py-7 xl:py-[21.5px] px-5">
-          <div class="py-2 px-3 text-center flex flex-col items-center justify-center">
-            <header class="mb-[22px] flex flex-col items-center justify-center">
-              <div class="w-16 h-16 mb-3 flex justify-center items-center rounded-full {{ purpose.iconBackground}}"
-                aria-hidden="true">
-                <img [ngSrc]="purpose.icon" [width]="purpose.iconWidth" height="26.67" [alt]="" />
-              </div>
-              <h3 class="text-2xl text-accent-800 leading-9 font-bold">{{ purpose.title }}</h3>
-            </header>
-            <p class="text-base text-accent-700 font-normal">{{ purpose.description }}</p>
-          </div>
-        </article>
-      </div>
+        <div
+          class="rounded-xl p-[2px] bg-gradient-to-b {{ purpose.borderGradient }}"
+          role="listitem"
+        >
+          <article
+            class="bg-white rounded-xl max-w-[588px] md:w-[373px] xl:w-[588px] md:h-[326px] xl:h-[265px] py-7 xl:py-[21.5px] px-5"
+          >
+            <div class="py-2 px-3 text-center flex flex-col items-center justify-center">
+              <header class="mb-[22px] flex flex-col items-center justify-center">
+                <div
+                  class="w-16 h-16 mb-3 flex justify-center items-center rounded-full {{
+                    purpose.iconBackground
+                  }}"
+                  aria-hidden="true"
+                >
+                  <img [ngSrc]="purpose.icon" [width]="purpose.iconWidth" height="26.67" [alt]="" />
+                </div>
+                <h3 class="text-2xl text-accent-800 leading-9 font-bold">{{ purpose.title }}</h3>
+              </header>
+              <p class="text-base text-accent-700 font-normal">{{ purpose.description }}</p>
+            </div>
+          </article>
+        </div>
       }
     </div>
   </section>

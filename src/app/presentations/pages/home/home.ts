@@ -1,7 +1,7 @@
-import { ourPurpose } from './../../../logics/constants/home-page.constants';
+import { ourPurpose } from './../../../logics/constants/home-page.constants'
 import { HeroSection } from './../../../../../projects/ui-components/src/lib/presentations/hero-section/hero-section'
 import { Component } from '@angular/core'
-import { NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common'
 
 @Component({
   selector: 'app-home',
