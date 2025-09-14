@@ -13,7 +13,7 @@
   </div>
 
   <section
-    class="py-[10px] px-6 md:px-8 xl:px-[120px] flex flex-col gap-8"
+    class="py-[10px] px-6 md:px-8 xl:px-[120px] flex flex-col gap-8 mb-6 xl:mb-[62px]"
     aria-labelledby="our-purpose-heading"
   >
     <header class="text-center flex flex-col gap-2 justify-center items-center">
@@ -27,11 +27,7 @@
       ></div>
     </header>
 
-    <div
-      class="flex flex-col md:flex-row items-center justify-center gap-6"
-      role="list"
-      aria-label="Our purpose initiatives"
-    >
+    <div class="custom-flex gap-6" role="list" aria-label="Our purpose initiatives">
       @for (purpose of ourPurpose; track $index) {
         <div
           class="rounded-xl p-[2px] bg-gradient-to-b {{ purpose.borderGradient }}"
@@ -52,11 +48,71 @@
                 </div>
                 <h3 class="text-2xl text-accent-800 leading-9 font-bold">{{ purpose.title }}</h3>
               </header>
-              <p class="text-base text-accent-700 font-normal">{{ purpose.description }}</p>
+              <p class="text-base text-accent-700 font-normal text-wrap truncate">
+                {{ purpose.description }}
+              </p>
             </div>
           </article>
         </div>
       }
+    </div>
+  </section>
+
+  <section
+    class="py-[10px] px-6 md:px-8 xl:px-[120px] flex flex-col gap-6"
+    aria-labelledby="who-we-are-heading"
+  >
+    <header class="text-center flex flex-col gap-2 justify-center items-center mb-6">
+      <h2 id="who-we-are-heading" class="text-2xl text-accent-950 leading-9 font-bold">
+        Who we are
+      </h2>
+      <div
+        class="w-[105px] border-b-[6px] border-secondary-700 rounded-xl"
+        role="presentation"
+        aria-hidden="true"
+      ></div>
+    </header>
+
+    <div class="flex flex-col gap-4 lg:hidden">
+      <div class="flex justify-center lg:hidden">
+        <img src="/images/logo.webp" alt="Nexus Health Research Alliance Logo" />
+      </div>
+
+      @for (card of contentCard; track card.title) {
+        <lib-content-card [cardData]="card" [variant]="card.variant" [ariaLabel]="card.title" />
+      }
+    </div>
+
+    <div class="hidden lg:flex lg:justify-between">
+      <div class="lg:flex-shrink-0">
+        <img src="/images/logo.webp" alt="Nexus Health Research Alliance Logo" />
+      </div>
+      <div class="lg:flex lg:gap-4 lg:flex-1">
+        <div class="flex flex-col items-end gap-4">
+          <lib-content-card
+            [cardData]="contentCard[1]"
+            [variant]="contentCard[1].variant"
+            [ariaLabel]="contentCard[1].title"
+          />
+          <lib-content-card
+            [cardData]="contentCard[0]"
+            [variant]="contentCard[0].variant"
+            [ariaLabel]="contentCard[0].title"
+          />
+        </div>
+        <div class="flex flex-col items-center gap-4 mt-9">
+          <lib-content-card
+            [cardData]="contentCard[2]"
+            [variant]="contentCard[2].variant"
+            [ariaLabel]="contentCard[2].title"
+          />
+          <lib-content-card
+            [cardData]="contentCard[3]"
+            [variant]="contentCard[3].variant"
+            [ariaLabel]="contentCard[3].title"
+          />
+        </div>
+      </div>
     </div>
   </section>
 </section>
