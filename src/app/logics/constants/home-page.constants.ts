@@ -1,4 +1,4 @@
-import { ContentCardWithVariant } from "../../../../projects/ui-components/src/public-api"
+import { ContentCardWithVariant } from '../../../../projects/ui-components/src/public-api'
 
 export const ourPurpose = [
   {

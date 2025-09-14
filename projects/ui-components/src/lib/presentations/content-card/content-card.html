@@ -1,18 +1,50 @@
-<article [class]="computedClasses()" [attr.aria-label]="ariaLabel() || cardData().title" aria-labelledby="card-title" aria-describedby="card-description">
+<article
+  [class]="computedClasses()"
+  [attr.aria-label]="ariaLabel() || cardData().title"
+  aria-labelledby="card-title"
+  aria-describedby="card-description"
+>
   <div class="w-full flex flex-col gap-3">
     <header class="w-full">
-      @if(isVariantInterdisciplinary()) {
-      <div class="w-16 h-16 flex items-center justify-center rounded-full mb-3" [class]="cardData().iconBackground" aria-hidden="true">
-        <img [ngSrc]="cardData().icon" [width]="cardData().iconWidth" [height]="cardData().iconHeight" [alt]="" class="object-contain" />
-      </div>
-      <h3 id="card-title" class="font-semibold text-xl text-accent-950 leading-[30px]">{{ cardData().title }}</h3>
-    } @else {
-      <h3 id="card-title" class="font-semibold text-xl text-accent-950 leading-[30px] mb-3">{{ cardData().title }}</h3>
-      <div class="w-16 h-16 flex items-center justify-center rounded-full {{ cardData().iconBackground }}" aria-hidden="true">
-        <img [ngSrc]="cardData().icon" [width]="cardData().iconWidth" [height]="cardData().iconHeight" [alt]="" class="object-contain" />
-      </div>
-    }
+      @if (isVariantInterdisciplinary()) {
+        <div
+          class="w-16 h-16 flex items-center justify-center rounded-full mb-3"
+          [class]="cardData().iconBackground"
+          aria-hidden="true"
+        >
+          <img
+            [ngSrc]="cardData().icon"
+            [width]="cardData().iconWidth"
+            [height]="cardData().iconHeight"
+            [alt]=""
+            class="object-contain"
+          />
+        </div>
+        <h3 id="card-title" class="font-semibold text-xl text-accent-950 leading-[30px]">
+          {{ cardData().title }}
+        </h3>
+      } @else {
+        <h3 id="card-title" class="font-semibold text-xl text-accent-950 leading-[30px] mb-3">
+          {{ cardData().title }}
+        </h3>
+        <div
+          class="w-16 h-16 flex items-center justify-center rounded-full {{
+            cardData().iconBackground
+          }}"
+          aria-hidden="true"
+        >
+          <img
+            [ngSrc]="cardData().icon"
+            [width]="cardData().iconWidth"
+            [height]="cardData().iconHeight"
+            [alt]=""
+            class="object-contain"
+          />
+        </div>
+      }
     </header>
-    <p id="card-description" class="font-normal text-base text-accent-800">{{ cardData().description }}</p>
+    <p id="card-description" class="font-normal text-base text-accent-800">
+      {{ cardData().description }}
+    </p>
   </div>
 </article>

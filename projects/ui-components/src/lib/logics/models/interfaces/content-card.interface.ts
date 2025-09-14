@@ -1,4 +1,4 @@
-import { ContentCardVariantProps } from "../../../variants/content-card.variant"
+import { ContentCardVariantProps } from '../../../variants/content-card.variant'
 
 export interface ContentCardData {
   title: string

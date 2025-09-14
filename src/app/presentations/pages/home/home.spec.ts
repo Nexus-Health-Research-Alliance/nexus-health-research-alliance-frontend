@@ -64,7 +64,9 @@ describe('Home Component', () => {
     })
 
     it('should render purpose titles correctly', () => {
-      const purposeSection = fixture.debugElement.query(By.css('section[aria-labelledby="our-purpose-heading"]'))
+      const purposeSection = fixture.debugElement.query(
+        By.css('section[aria-labelledby="our-purpose-heading"]'),
+      )
       const titles = purposeSection.queryAll(By.css('article h3'))
 
       expect(titles.length).toBe(ourPurpose.length)
@@ -74,7 +76,9 @@ describe('Home Component', () => {
     })
 
     it('should render purpose descriptions correctly', () => {
-      const purposeSection = fixture.debugElement.query(By.css('section[aria-labelledby="our-purpose-heading"]'))
+      const purposeSection = fixture.debugElement.query(
+        By.css('section[aria-labelledby="our-purpose-heading"]'),
+      )
       const descriptions = purposeSection.queryAll(By.css('article p'))
 
       expect(descriptions.length).toBe(ourPurpose.length)
@@ -93,12 +97,16 @@ describe('Home Component', () => {
     })
 
     it('should render purpose icons', () => {
-      const purposeSection = fixture.debugElement.query(By.css('section[aria-labelledby="our-purpose-heading"]'))
+      const purposeSection = fixture.debugElement.query(
+        By.css('section[aria-labelledby="our-purpose-heading"]'),
+      )
       const icons = purposeSection.queryAll(By.css('article img'))
 
       expect(icons.length).toBe(ourPurpose.length)
       icons.forEach((iconElement, index) => {
-        expect(iconElement.nativeElement.getAttribute('width')).toBe(ourPurpose[index].iconWidth.toString())
+        expect(iconElement.nativeElement.getAttribute('width')).toBe(
+          ourPurpose[index].iconWidth.toString(),
+        )
         expect(iconElement.nativeElement.getAttribute('height')).toBe('26.67')
       })
     })
@@ -113,26 +121,34 @@ describe('Home Component', () => {
     })
 
     it('should render the main logo', () => {
-      const logos = fixture.debugElement.queryAll(By.css('img[alt="Nexus Health Research Alliance Logo"]'))
+      const logos = fixture.debugElement.queryAll(
+        By.css('img[alt="Nexus Health Research Alliance Logo"]'),
+      )
 
       expect(logos.length).toBeGreaterThanOrEqual(1)
-      logos.forEach(logo => {
+      logos.forEach((logo) => {
         expect(logo.nativeElement.getAttribute('src')).toBe('/images/logo.webp')
       })
     })
 
     it('should have proper section structure with aria-labelledby', () => {
-      const whoWeAreSection = fixture.debugElement.query(By.css('section[aria-labelledby="who-we-are-heading"]'))
+      const whoWeAreSection = fixture.debugElement.query(
+        By.css('section[aria-labelledby="who-we-are-heading"]'),
+      )
 
       expect(whoWeAreSection).toBeTruthy()
-      expect(whoWeAreSection.nativeElement.getAttribute('aria-labelledby')).toBe('who-we-are-heading')
+      expect(whoWeAreSection.nativeElement.getAttribute('aria-labelledby')).toBe(
+        'who-we-are-heading',
+      )
     })
 
     it('should have responsive layout classes for mobile and desktop', () => {
       const mobileLayout = fixture.debugElement.query(By.css('.flex.flex-col.gap-4.lg\\:hidden'))
       expect(mobileLayout).toBeTruthy()
 
-      const desktopLayout = fixture.debugElement.query(By.css('.hidden.lg\\:flex.lg\\:justify-between'))
+      const desktopLayout = fixture.debugElement.query(
+        By.css('.hidden.lg\\:flex.lg\\:justify-between'),
+      )
       expect(desktopLayout).toBeTruthy()
     })
 
