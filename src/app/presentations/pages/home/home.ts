@@ -1,13 +1,29 @@
-import { ourPurpose } from './../../../logics/constants/home-page.constants'
-import { HeroSection } from './../../../../../projects/ui-components/src/lib/presentations/hero-section/hero-section'
+import { ourPurpose, contentCard } from './../../../logics/constants/home-page.constants'
 import { Component } from '@angular/core'
 import { NgOptimizedImage } from '@angular/common'
+import { ContentCard, HeroSection } from '../../../../../projects/ui-components/src/public-api'
 
 @Component({
   selector: 'app-home',
-  imports: [HeroSection, NgOptimizedImage],
+  imports: [HeroSection, ContentCard, NgOptimizedImage],
   templateUrl: './home.html',
+  styles: [
+    `
+      .custom-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      @media (min-width: 834px) {
+        .custom-flex {
+          flex-direction: row;
+        }
+      }
+    `,
+  ],
 })
 export class Home {
   public readonly ourPurpose = ourPurpose
+  public readonly contentCard = contentCard
 }
