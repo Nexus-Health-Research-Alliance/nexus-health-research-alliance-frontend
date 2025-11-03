@@ -6,6 +6,15 @@ import { Button } from '../button/button'
   selector: 'lib-hero-section',
   imports: [CommonModule, Button],
   templateUrl: './hero-section.html',
+  styles: [
+    `
+      @media (min-width: 1440px) {
+        .textSize {
+          font-size: 4.5rem;
+        }
+      }
+    `,
+  ],
 })
 export class HeroSection {
   public title = input.required<string>()
