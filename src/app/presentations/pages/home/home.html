@@ -120,5 +120,100 @@
     <img ngSrc="/images/divider.svg" alt="" width="100" height="100" class="w-full h-full" />
   </div>
 
-  <section class="w-full bg-brand-50 py-6 px-8 xl:py-[107px] xl:px-[120px] flex flex-col xl:flex-row gap-6 xl:gap-44"></section>
+  <section
+    class="w-full bg-brand-50 py-6 px-8 xl:py-[107px] xl:px-[120px] grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-44"
+    aria-labelledby="what-we-do-heading"
+  >
+    <div class="relative">
+      <div>
+        <img
+          src="/images/microscope.svg"
+          alt="Research microscope representing our clinical research focus"
+          class="w-[249.06px] h-96 md:w-[588.28px] md:h-[382px] md:-translate-x-10 lg:translate-x-0 object-cover lg:w-[588px] xl:size-[382px]"
+        />
+      </div>
+      <div
+        class="absolute bottom-0 right-4 px-4 bg-white flex items-center rounded-md justify-center w-[153.87px] xl:w-[236px] md:w-[363.44px] h-[119px]"
+        role="img"
+        aria-label="Nexus Health Research Alliance logo overlay"
+      >
+        <img src="/images/logo.webp" alt="" class="object-scale-down" aria-hidden="true" />
+      </div>
+    </div>
+
+    <div>
+      <header class="mb-6">
+        <h2 id="what-we-do-heading" class="text-2xl text-accent-950 leading-9 font-bold">
+          What We Do
+        </h2>
+        <div
+          class="w-[105px] border-b-[6px] border-secondary-700 rounded-xl"
+          role="presentation"
+          aria-hidden="true"
+        ></div>
+      </header>
+
+      <div>
+        <p class="font-normal text-base text-accent-700 mb-8">
+          Our current research focus centers on two key areas that build the foundation for
+          comprehensive African-led clinical research.
+        </p>
+
+        <ol class="flex flex-row justify-center gap-6 mb-8" aria-label="Research focus areas">
+          <li class="flex flex-col items-center justify-between gap-[60.01px]" aria-hidden="true">
+            <div
+              class="flex items-center justify-center border-[2.08px] border-dashed border-brand-700 opacity-100 border-opacity-100 size-[54.01px] rounded-[1040.63px]"
+            >
+              <div
+                class="flex items-center justify-center size-[37.5px] border-[5.21px] border-brand-700 rounded-[1040.63px]"
+              >
+                <span class="font-roboto font-normal text-base text-brand-700">01</span>
+              </div>
+            </div>
+            <div
+              class="flex items-center justify-center border-[2.08px] border-dashed border-brand-700 opacity-100 border-opacity-100 size-[54.01px] rounded-[1040.63px]"
+            >
+              <div
+                class="flex items-center justify-center size-[37.5px] border-[5.21px] border-brand-700 rounded-[1040.63px]"
+              >
+                <span class="font-roboto font-normal text-base text-brand-700">02</span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <article class="font-roboto mb-[35px]">
+              <h3 class="font-bold text-base text-accent-950 mb-1">
+                Retrospective Clinical Studies
+              </h3>
+              <p class="font-normal text-base text-accent-700">
+                Analyze existing patient records to understand disease burden, risk factors, and
+                outcomes.
+              </p>
+            </article>
+
+            <article class="font-roboto">
+              <h3 class="font-bold text-base text-accent-950 mb-1">
+                Longitudinal Deep Phenotyping Study
+              </h3>
+              <p class="font-normal text-base text-accent-700 sr-only">
+                Comprehensive study tracking patient characteristics and outcomes over time.
+              </p>
+            </article>
+          </li>
+        </ol>
+
+        <lib-button
+          variant="secondary"
+          linkType="routerLink"
+          linkUrl="/who-we-are"
+          size="medium"
+          className="bg-transparent hover:bg-brand-700 text-base text-brand-700 font-bold hover:text-accent-100 rounded border-brand-700 focus:border-[1.5px] focus:border-primaryBlue-50 focus:ring-[1.5px] active:bg-brand-800 active:border-0 disabled:border-brand-200 disabled:text-brand-200 disabled:bg-accent-100 px-5 py-1 duration-300 before:h-0 before:w-0 w-[200px] sm:w-auto"
+          ariaLabel="Learn more about our research focus areas"
+        >
+          <span>Learn More</span>
+        </lib-button>
+      </div>
+    </div>
+  </section>
 </section>
