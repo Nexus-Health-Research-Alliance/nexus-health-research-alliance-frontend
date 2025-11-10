@@ -1,7 +1,11 @@
 import { ourPurpose, contentCard } from './../../../logics/constants/home-page.constants'
 import { Component } from '@angular/core'
 import { NgOptimizedImage } from '@angular/common'
-import { ContentCard, HeroSection, Button } from '../../../../../projects/ui-components/src/public-api'
+import {
+  ContentCard,
+  HeroSection,
+  Button,
+} from '../../../../../projects/ui-components/src/public-api'
 
 @Component({
   selector: 'app-home',
