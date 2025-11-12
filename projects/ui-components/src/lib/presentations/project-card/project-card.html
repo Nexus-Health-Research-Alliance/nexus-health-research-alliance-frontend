@@ -14,7 +14,12 @@
       />
     </figure>
 
-    <h3 [id]="'project-title-' + cardData().id" class="font-roboto font-bold text-base text-accent-950 mb-4">{{ cardData().title }}</h3>
+    <h3
+      [id]="'project-title-' + cardData().id"
+      class="font-roboto font-bold text-base text-accent-950 mb-4"
+    >
+      {{ cardData().title }}
+    </h3>
 
     <lib-button
       variant="secondary"

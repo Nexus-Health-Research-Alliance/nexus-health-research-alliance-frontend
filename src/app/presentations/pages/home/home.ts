@@ -35,7 +35,8 @@ export class Home {
     {
       id: '1',
       imageUrl: '/images/project-image-1.svg',
-      imageAlt: 'Two researchers in white lab coats conducting clinical research with microscope and test samples',
+      imageAlt:
+        'Two researchers in white lab coats conducting clinical research with microscope and test samples',
       title: 'Chronic Kidney Disease Outcomes in Ghana',
       buttonText: 'Learn More',
       buttonLink: '/projects/chronic-kidney-disease-ghana',
