@@ -1,0 +1,35 @@
+<article
+  class="w-full max-w-[770px] py-5 px-4 md:py-7 md:px-4 lg:py-7 lg:px-4 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300"
+  [attr.aria-labelledby]="'project-title-' + cardData().id"
+>
+  <div class="w-full">
+    <figure class="w-full overflow-hidden mb-4">
+      <img
+        [ngSrc]="cardData().imageUrl"
+        [alt]="cardData().imageAlt"
+        [width]="cardData().imageWidth"
+        [height]="cardData().imageHeight"
+        class="w-full h-full object-cover"
+        priority
+      />
+    </figure>
+
+    <h3
+      [id]="'project-title-' + cardData().id"
+      class="font-roboto font-bold text-base text-accent-950 mb-4"
+    >
+      {{ cardData().title }}
+    </h3>
+
+    <lib-button
+      variant="secondary"
+      linkType="routerLink"
+      [linkUrl]="cardData().buttonLink ?? '/'"
+      size="medium"
+      className="bg-transparent hover:bg-brand-700 text-base text-brand-700 font-bold hover:text-accent-100 rounded border-brand-700 focus:border-[1.5px] focus:border-primaryBlue-50 focus:ring-[1.5px] active:bg-brand-800 active:border-0 disabled:border-brand-200 disabled:text-brand-200 disabled:bg-accent-100 px-[12px] py-2 duration-300 before:h-0 before:w-0 w-[129px] md:w-[137px] sm:w-auto"
+      [ariaLabel]="'Learn more about ' + cardData().title"
+    >
+      <span>{{ cardData().buttonText }}</span>
+    </lib-button>
+  </div>
+</article>
