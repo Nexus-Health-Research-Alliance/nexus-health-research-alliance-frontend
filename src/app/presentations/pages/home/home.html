@@ -246,6 +246,10 @@
         <img src="/icons/arrow-right.svg" alt="" />
       </lib-button>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6"></div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      @for (card of projectCards; track card.id) {
+        <lib-project-card [cardData]="card" />
+      }
+    </div>
   </section>
 </section>
