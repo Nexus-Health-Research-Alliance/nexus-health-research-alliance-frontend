@@ -64,4 +64,54 @@ export class Home {
       imageHeight: 933,
     },
   ]
+  public readonly strategicPartners = [
+    {
+      name: 'Korlebu Teaching Hospital',
+      logoUrl: '/images/korlebu.svg',
+      logoAlt: 'Korlebu Teaching Hospital Logo',
+      logoWidth: 200,
+      logoHeight: 80,
+      websiteLink: 'https://kth.gov.gh/',
+    },
+    {
+      name: 'Cardiex Medical Research Center',
+      logoUrl: '/images/cardiex.svg',
+      logoAlt: 'Cardiex Medical Research Center Logo',
+      logoWidth: 200,
+      logoHeight: 80,
+      websiteLink: 'https://cardiex.org/'
+    },
+    {
+      name: 'Active Insight',
+      logoUrl: '/images/active-insight.svg',
+      logoAlt: 'Active Insight Logo',
+      logoWidth: 200,
+      logoHeight: 80,
+      websiteLink: 'https://activeinsightlabs.com/'
+    },
+    {
+      name: 'Noguchi Memorial Institute for Medical Research',
+      logoUrl: '/images/noguchi.svg',
+      logoAlt: 'Noguchi Memorial Institute for Medical Research Logo',
+      logoWidth: 200,
+      logoHeight: 80,
+      websiteLink: 'https://www.noguchimedres.org/'
+    },
+    {
+      name: 'University of Ghana',
+      logoUrl: '/images/ug-mc.svg',
+      logoAlt: 'University of Ghana Logo',
+      logoWidth: 200,
+      logoHeight: 80,
+      websiteLink: 'https://www.ug.edu.gh/',
+    },
+    {
+      name: 'Medical Systems Africa',
+      logoUrl: '/images/medical-systems.svg',
+      logoAlt: 'Medical Systems Africa Logo',
+      logoWidth: 200,
+      logoHeight: 80,
+      websiteLink: 'https://medsysafrica.com/',
+    }
+  ]
 }
