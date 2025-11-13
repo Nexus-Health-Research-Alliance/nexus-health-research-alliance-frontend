@@ -1,8 +1,70 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,ts}"],
+  content: ['./src/**/*.{html,ts}', 'projects/ui-components/src/**/*.{html,ts}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        brand: {
+          50: '#EFF9FF',
+          100: '#DEF3FF',
+          200: '#B6E9FF',
+          300: '#75DAFF',
+          400: '#2DC7FF',
+          500: '#01B1F6',
+          600: '#008ED3',
+          700: '#0071AA',
+          800: '#005F8C',
+          900: '#064F74',
+          920: '#032E4E',
+          950: '#04304A',
+        },
+        secondary: {
+          50: '#ECFFEF',
+          100: '#D2FFDD',
+          200: '#A9FFBD',
+          300: '#66FF8A',
+          400: '#1EFF50',
+          500: '#00F62A',
+          600: '#00CD1E',
+          700: '#00A01B',
+          800: '#007D1A',
+          900: '#015E17',
+          950: '#003A0B',
+        },
+        accent: {
+          50: '#FFFFFF',
+          100: '#EFEFEF',
+          200: '#DCDCDC',
+          300: '#BDBDBD',
+          400: '#989898',
+          500: '#7C7C7C',
+          600: '#656565',
+          700: '#525252',
+          800: '#464646',
+          900: '#3D3D3D',
+          950: '#292929',
+        },
+        error: {
+          50: '#FFF0F0',
+          100: '#FFDDDD',
+          200: '#FFC0C0',
+          300: '#FF9494',
+          400: '#FF5757',
+          500: '#FF2323',
+          600: '#FF0000',
+          700: '#D70000',
+          800: '#B10303',
+          900: '#920A0A',
+          950: '#500000',
+        },
+        primaryBlue: {
+          50: '#5275FF',
+        },
+      },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
-};
+}

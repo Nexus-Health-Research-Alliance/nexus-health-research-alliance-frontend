@@ -1,0 +1,340 @@
+<section class="">
+  <lib-hero-section
+    title="Nexus Health Research Alliance."
+    subtitle="Advancing Clinical Research and Health Outcomes"
+    description="Nexus Health Research Alliance is a collaborative initiative dedicated to strengthening clinical and public health research. By combining scientific rigor, multidisciplinary expertise, and strong institutional partnerships, we aim to produce reliable evidence that drives improvements in patient care, clinical practice, and health policy in low- and middleincome countries and the African region"
+    videoSrc="/videos/hero-video.mp4"
+    videoAriaLabel="Promotional content"
+    [showCtaButtons]="true"
+  />
+
+  <div class="w-full my-4 md:my-6 xl:my-8" role="separator" aria-hidden="true">
+    <img ngSrc="/images/divider.svg" alt="" width="100" height="100" class="w-full h-full" />
+  </div>
+
+  <section
+    class="py-[10px] px-6 md:px-8 xl:px-[120px] flex flex-col gap-8 mb-6 xl:mb-[62px]"
+    aria-labelledby="our-purpose-heading"
+  >
+    <header class="text-center flex flex-col gap-2 justify-center items-center">
+      <h2 id="our-purpose-heading" class="text-2xl text-accent-950 leading-9 font-bold">
+        Our Purpose
+      </h2>
+      <div
+        class="w-[105px] border-b-[6px] border-secondary-700 rounded-xl"
+        role="presentation"
+        aria-hidden="true"
+      ></div>
+    </header>
+
+    <div class="custom-flex gap-6" role="list" aria-label="Our purpose initiatives">
+      @for (purpose of ourPurpose; track $index) {
+        <div
+          class="rounded-xl p-[2px] bg-gradient-to-b {{ purpose.borderGradient }}"
+          role="listitem"
+        >
+          <article
+            class="bg-white rounded-xl max-w-[588px] md:w-[373px] xl:w-[588px] md:h-[326px] xl:h-[265px] py-7 xl:py-[21.5px] px-5"
+          >
+            <div class="py-2 px-3 text-center flex flex-col items-center justify-center">
+              <header class="mb-[22px] flex flex-col items-center justify-center">
+                <div
+                  class="w-16 h-16 mb-3 flex justify-center items-center rounded-full {{
+                    purpose.iconBackground
+                  }}"
+                  aria-hidden="true"
+                >
+                  <img [ngSrc]="purpose.icon" [width]="purpose.iconWidth" height="26.67" [alt]="" />
+                </div>
+                <h3 class="text-2xl text-accent-800 leading-9 font-bold">{{ purpose.title }}</h3>
+              </header>
+              <p class="text-base text-accent-700 font-normal text-wrap truncate">
+                {{ purpose.description }}
+              </p>
+            </div>
+          </article>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section
+    class="py-[10px] px-6 md:px-8 xl:px-[120px] flex flex-col gap-6"
+    aria-labelledby="who-we-are-heading"
+  >
+    <header class="text-center flex flex-col gap-2 justify-center items-center mb-6">
+      <h2 id="who-we-are-heading" class="text-2xl text-accent-950 leading-9 font-bold">
+        Who we are
+      </h2>
+      <div
+        class="w-[105px] border-b-[6px] border-secondary-700 rounded-xl"
+        role="presentation"
+        aria-hidden="true"
+      ></div>
+    </header>
+
+    <div class="flex flex-col gap-4 lg:hidden">
+      <div class="flex justify-center lg:hidden">
+        <img src="/images/logo.webp" alt="Nexus Health Research Alliance Logo" />
+      </div>
+
+      @for (card of contentCard; track card.title) {
+        <lib-content-card [cardData]="card" [variant]="card.variant" [ariaLabel]="card.title" />
+      }
+    </div>
+
+    <div class="hidden lg:flex lg:justify-between">
+      <div class="lg:flex-shrink-0">
+        <img src="/images/logo.webp" alt="Nexus Health Research Alliance Logo" />
+      </div>
+      <div class="lg:flex lg:gap-4 lg:flex-1">
+        <div class="flex flex-col items-end gap-4">
+          <lib-content-card
+            [cardData]="contentCard[1]"
+            [variant]="contentCard[1].variant"
+            [ariaLabel]="contentCard[1].title"
+          />
+          <lib-content-card
+            [cardData]="contentCard[0]"
+            [variant]="contentCard[0].variant"
+            [ariaLabel]="contentCard[0].title"
+          />
+        </div>
+        <div class="flex flex-col items-center gap-4 mt-9">
+          <lib-content-card
+            [cardData]="contentCard[2]"
+            [variant]="contentCard[2].variant"
+            [ariaLabel]="contentCard[2].title"
+          />
+          <lib-content-card
+            [cardData]="contentCard[3]"
+            [variant]="contentCard[3].variant"
+            [ariaLabel]="contentCard[3].title"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="w-full my-4 md:my-6 xl:my-8" role="separator" aria-hidden="true">
+    <img ngSrc="/images/divider.svg" alt="" width="100" height="100" class="w-full h-full" />
+  </div>
+
+  <section
+    class="w-full bg-brand-50 py-6 px-8 xl:py-[107px] xl:px-[120px] grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-44 mb-20 md:mb-[38.97px] xl:mb-[38px]"
+    aria-labelledby="what-we-do-heading"
+  >
+    <div class="relative">
+      <div>
+        <img
+          src="/images/microscope.svg"
+          alt="Research microscope representing our clinical research focus"
+          class="w-[249.06px] h-96 md:w-[588.28px] md:h-[382px] md:-translate-x-10 lg:translate-x-0 object-cover lg:w-[588px] xl:size-[382px]"
+        />
+      </div>
+      <div
+        class="absolute bottom-0 right-4 px-4 bg-white flex items-center rounded-md justify-center w-[153.87px] xl:w-[236px] md:w-[363.44px] h-[119px]"
+        role="img"
+        aria-label="Nexus Health Research Alliance logo overlay"
+      >
+        <img src="/images/logo.webp" alt="" class="object-scale-down" aria-hidden="true" />
+      </div>
+    </div>
+
+    <div>
+      <header class="mb-6">
+        <h2 id="what-we-do-heading" class="text-2xl text-accent-950 leading-9 font-bold">
+          What We Do
+        </h2>
+        <div
+          class="w-[105px] border-b-[6px] border-secondary-700 rounded-xl"
+          role="presentation"
+          aria-hidden="true"
+        ></div>
+      </header>
+
+      <div>
+        <p class="font-normal text-base text-accent-700 mb-8">
+          Our current research focus centers on two key areas that build the foundation for
+          comprehensive African-led clinical research.
+        </p>
+
+        <ol class="flex flex-row justify-center gap-6 mb-8" aria-label="Research focus areas">
+          <li class="flex flex-col items-center justify-between gap-[60.01px]" aria-hidden="true">
+            <div
+              class="flex items-center justify-center border-[2.08px] border-dashed border-brand-700 opacity-100 border-opacity-100 size-[54.01px] rounded-[1040.63px]"
+            >
+              <div
+                class="flex items-center justify-center size-[37.5px] border-[5.21px] border-brand-700 rounded-[1040.63px]"
+              >
+                <span class="font-roboto font-normal text-base text-brand-700">01</span>
+              </div>
+            </div>
+            <div
+              class="flex items-center justify-center border-[2.08px] border-dashed border-brand-700 opacity-100 border-opacity-100 size-[54.01px] rounded-[1040.63px]"
+            >
+              <div
+                class="flex items-center justify-center size-[37.5px] border-[5.21px] border-brand-700 rounded-[1040.63px]"
+              >
+                <span class="font-roboto font-normal text-base text-brand-700">02</span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <article class="font-roboto mb-[35px]">
+              <h3 class="font-bold text-base text-accent-950 mb-1">
+                Retrospective Clinical Studies
+              </h3>
+              <p class="font-normal text-base text-accent-700">
+                Analyze existing patient records to understand disease burden, risk factors, and
+                outcomes.
+              </p>
+            </article>
+
+            <article class="font-roboto">
+              <h3 class="font-bold text-base text-accent-950 mb-1">
+                Longitudinal Deep Phenotyping Study
+              </h3>
+              <p class="font-normal text-base text-accent-700 sr-only">
+                Comprehensive study tracking patient characteristics and outcomes over time.
+              </p>
+            </article>
+          </li>
+        </ol>
+
+        <lib-button
+          variant="secondary"
+          linkType="routerLink"
+          linkUrl="/who-we-are"
+          size="medium"
+          className="bg-transparent hover:bg-brand-700 text-base text-brand-700 font-bold hover:text-accent-100 rounded border-brand-700 focus:border-[1.5px] focus:border-primaryBlue-50 focus:ring-[1.5px] active:bg-brand-800 active:border-0 disabled:border-brand-200 disabled:text-brand-200 disabled:bg-accent-100 px-5 py-1 duration-300 before:h-0 before:w-0 w-[200px] sm:w-auto"
+          ariaLabel="Learn more about our research focus areas"
+        >
+          <span>Learn More</span>
+        </lib-button>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="py-4 px-6 md:px-8 xl:px-[120px] flex flex-col gap-4 mb-6"
+    aria-labelledby="projects-heading"
+  >
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-2.5">
+      <div>
+        <header class="mb-6">
+          <h2 id="projects-heading" class="text-2xl text-accent-950 leading-9 font-bold">
+            Projects
+          </h2>
+          <div
+            class="w-[105px] border-b-[6px] border-secondary-700 rounded-xl"
+            role="presentation"
+            aria-hidden="true"
+          ></div>
+        </header>
+        <p class="font-normal text-base text-accent-700">
+          Explore some of our current projects in the research field.
+        </p>
+      </div>
+
+      <nav aria-label="Projects navigation">
+        <lib-button
+          variant="link"
+          linkType="routerLink"
+          linkUrl="/projects"
+          size="medium"
+          className="flex items-center gap-2 border-[1.5px] hover:bg-brand-700 text-base text-brand-700 font-bold hover:text-accent-100 rounded border-brand-700 focus:border-[1.5px] focus:border-primaryBlue-50 focus:ring-[1.5px] active:bg-brand-800 active:border-0 disabled:border-brand-200 disabled:text-brand-200 disabled:bg-accent-100 px-5 py-1 duration-300 before:h-0 before:w-0 w-[200px] sm:w-auto"
+          ariaLabel="View all projects - Navigate to complete projects listing"
+        >
+          <span>View all Projects</span>
+          <img src="/icons/arrow-right.svg" alt="" aria-hidden="true" />
+        </lib-button>
+      </nav>
+    </div>
+
+    <div
+      class="grid grid-cols-1 lg:grid-cols-3 gap-6"
+      role="list"
+      aria-label="Featured research projects"
+    >
+      @for (card of projectCards; track card.id) {
+        <div role="listitem">
+          <lib-project-card [cardData]="card" />
+        </div>
+      }
+    </div>
+  </section>
+
+  <section
+    class="bg-brand-920 py-4 md:py-[12px] px-6 md:px-8 xl:px-[120px] grid grid-cols-[4fr_1fr] gap-6 items-center mb-6 lg:mb-[42px]"
+    aria-labelledby="bridging-gap-heading"
+  >
+    <header class="font-roboto font-normal">
+      <h2
+        id="bridging-gap-heading"
+        class="text-base md:text-lg xl:text-xl text-accent-50 mb-2 font-bold"
+      >
+        Nexus Health Research Alliance is Bridging This Critical Gap
+      </h2>
+      <p class="text-xs md:text-sm text-accent-100 leading-[18px] md:leading-6">
+        By centering local expertise, patients, and priorities, we're generating the evidence needed
+        to inform clinical care, shape public health policy, and advance global research equity. Our
+        work ensures that healthcare decisions affecting specific populations are based on research
+        conducted by and for those communities.
+      </p>
+    </header>
+
+    <div class="flex justify-end items-center">
+      <img
+        src="/images/mini-microscope.svg"
+        alt="Microscope icon representing research"
+        class="w-auto h-[100px] md:h-[120px] xl:h-[140px] object-contain"
+      />
+    </div>
+  </section>
+
+  <section
+    class="py-2.5 px-6 md:px-8 xl:px-[120px] flex flex-col gap-8 mb-[44.4px] md:mb-[163px] lg:mb-[274px]"
+    aria-labelledby="strategic-partners-heading"
+  >
+    <div class="max-w-[524px] w-full">
+      <header class="mb-6">
+        <h2 id="strategic-partners-heading" class="text-2xl text-accent-950 leading-9 font-bold">
+          Our Strategic Partners
+        </h2>
+        <div
+          class="w-[78px] border-b-[6px] border-secondary-700 rounded-xl"
+          role="presentation"
+          aria-hidden="true"
+        ></div>
+      </header>
+      <p class="font-normal text-base text-accent-700">
+        Building impactful research through collaboration with leading healthcare institutions
+      </p>
+    </div>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8 lg:gap-5 justify-items-center md:[&>*:nth-child(5)]:col-start-2 md:[&>*:nth-child(6)]:col-start-3 lg:[&>*:nth-child(5)]:col-start-auto lg:[&>*:nth-child(6)]:col-start-auto"
+      role="list"
+      aria-label="Strategic partner organizations"
+    >
+      @for (partner of strategicPartners; track partner.name) {
+        <figure class="w-[150px] md:w-[58px] lg:w-[102px]" role="listitem">
+          <img
+            [ngSrc]="partner.logoUrl"
+            [alt]="partner.name + ' logo'"
+            class="h-full w-full object-contain"
+            [width]="partner.logoWidth"
+            [height]="partner.logoHeight"
+          />
+          <figcaption class="sr-only">{{ partner.name }}</figcaption>
+        </figure>
+      }
+    </div>
+  </section>
+
+  <div class="w-full" role="separator" aria-hidden="true">
+    <img ngSrc="/images/divider.svg" alt="" width="100" height="100" class="w-full h-full" />
+  </div>
+</section>
