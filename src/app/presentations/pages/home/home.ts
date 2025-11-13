@@ -79,7 +79,7 @@ export class Home {
       logoAlt: 'Cardiex Medical Research Center Logo',
       logoWidth: 200,
       logoHeight: 80,
-      websiteLink: 'https://cardiex.org/'
+      websiteLink: 'https://cardiex.org/',
     },
     {
       name: 'Active Insight',
@@ -87,7 +87,7 @@ export class Home {
       logoAlt: 'Active Insight Logo',
       logoWidth: 200,
       logoHeight: 80,
-      websiteLink: 'https://activeinsightlabs.com/'
+      websiteLink: 'https://activeinsightlabs.com/',
     },
     {
       name: 'Noguchi Memorial Institute for Medical Research',
@@ -95,7 +95,7 @@ export class Home {
       logoAlt: 'Noguchi Memorial Institute for Medical Research Logo',
       logoWidth: 200,
       logoHeight: 80,
-      websiteLink: 'https://www.noguchimedres.org/'
+      websiteLink: 'https://www.noguchimedres.org/',
     },
     {
       name: 'University of Ghana',
@@ -112,6 +112,6 @@ export class Home {
       logoWidth: 200,
       logoHeight: 80,
       websiteLink: 'https://medsysafrica.com/',
-    }
+    },
   ]
 }
