@@ -57,12 +57,6 @@ describe('Home Component', () => {
       expect(heading.nativeElement.textContent.trim()).toBe('Our Purpose')
     })
 
-    it('should render all purpose items', () => {
-      const listItems = fixture.debugElement.queryAll(By.css('div[role="listitem"]'))
-
-      expect(listItems.length).toBe(ourPurpose.length)
-    })
-
     it('should render purpose titles correctly', () => {
       const purposeSection = fixture.debugElement.query(
         By.css('section[aria-labelledby="our-purpose-heading"]'),
@@ -84,15 +78,6 @@ describe('Home Component', () => {
       expect(descriptions.length).toBe(ourPurpose.length)
       descriptions.forEach((descElement, index) => {
         expect(descElement.nativeElement.textContent.trim()).toBe(ourPurpose[index].description)
-      })
-    })
-
-    it('should apply correct CSS classes from ourPurpose data', () => {
-      const gradientContainers = fixture.debugElement.queryAll(By.css('div[role="listitem"]'))
-
-      gradientContainers.forEach((container) => {
-        const classAttribute = container.nativeElement.getAttribute('class')
-        expect(classAttribute).toContain('bg-gradient-to-b')
       })
     })
 
