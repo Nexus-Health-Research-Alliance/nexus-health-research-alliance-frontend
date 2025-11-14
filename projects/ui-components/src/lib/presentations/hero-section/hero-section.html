@@ -1,22 +1,33 @@
 <section
-  class="relative h-screen w-full overflow-hidden"
+  class="relative h-screen w-full overflow-hidden mb-60 md:mb-8 lg:mb-[72px]"
   aria-labelledby="hero-title"
   aria-describedby="hero-description"
 >
-  <video
-    class="absolute inset-0 w-full h-full object-cover"
-    [src]="videoSrc()"
-    autoplay
-    muted
-    loop
-    playsinline
-    [attr.aria-label]="videoAriaLabel() || 'Background video'"
-  >
-    <p>
-      Your browser does not support the video tag. Background video shows
-      {{ videoAriaLabel() || 'promotional content' }}.
-    </p>
-  </video>
+  @if (mediaType() === 'video' && videoSrc()) {
+    <video
+      class="absolute inset-0 w-full h-full object-cover"
+      [src]="videoSrc()"
+      autoplay
+      muted
+      loop
+      playsinline
+      [attr.aria-label]="videoAriaLabel() || 'Background video'"
+    >
+      <p>
+        Your browser does not support the video tag. Background video shows
+        {{ videoAriaLabel() || 'promotional content' }}.
+      </p>
+    </video>
+  }
+
+  @if (mediaType() === 'image' && imageSrc()) {
+    <img
+      class="absolute inset-0 w-full h-full object-cover"
+      [src]="imageSrc()"
+      [alt]="imageAlt() || 'Background image'"
+      [attr.aria-label]="imageAlt() || 'Background image'"
+    />
+  }
 
   <div class="absolute inset-0 bg-black bg-opacity-45" aria-hidden="true"></div>
 
@@ -39,7 +50,7 @@
       </p>
     </div>
 
-    <div class="mb-8 max-w-[1123.3px] mx-auto">
+    <div class="mb-8 mx-auto" [class.max-w-[1123.3px]]="videoSrc()" [class.max-w-[898px]]="imageSrc()">
       <p
         id="hero-description"
         class="font-normal text-xs md:text-sm xl:text-base text-white leading-[18px] md:leading-[21px] xl:leading-6"
@@ -83,6 +94,6 @@
     aria-label="Scroll down to see more content"
     class="absolute bottom-1 left-[48%] sm:left-1/2 transform -translate-x-1/2 animate-bounce"
   >
-    <img src="/icons/white-arrow-down.svg" alt="" aria-hidden="true" />
+    <img src="/icons/white-arrow-down.svg" alt="" aria-hidden="true" class="w-[29.25px] h-[14.63px]" />
   </div>
 </section>

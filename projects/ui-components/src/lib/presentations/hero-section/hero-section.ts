@@ -20,7 +20,10 @@ export class HeroSection {
   public title = input.required<string>()
   public subtitle = input.required<string>()
   public description = input('')
-  public videoSrc = input.required<string>()
+  public mediaType = input<'video' | 'image'>('video')
+  public videoSrc = input<string>('')
+  public imageSrc = input<string>('')
+  public imageAlt = input<string>('')
   public videoAriaLabel = input('')
   public showCtaButtons = input(false, { transform: booleanAttribute })
 }
