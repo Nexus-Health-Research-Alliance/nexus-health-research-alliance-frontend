@@ -1,7 +1,5 @@
 import { Component } from '@angular/core'
-import {
-  HeroSection,
-} from '../../../../../projects/ui-components/src/public-api'
+import { HeroSection } from '../../../../../projects/ui-components/src/public-api'
 
 @Component({
   selector: 'app-who-we-are',
