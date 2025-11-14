@@ -1,9 +1,9 @@
 import { Component } from '@angular/core'
+import { HeroSection } from '../../../../../projects/ui-components/src/public-api'
 
 @Component({
   selector: 'app-who-we-are',
-  imports: [],
+  imports: [HeroSection],
   templateUrl: './who-we-are.html',
-  styleUrl: './who-we-are.css',
 })
 export class WhoWeAre {}
